@@ -1,0 +1,44 @@
+.storybook-button-terciary {
+  /* Layout */
+  display: flex;
+  height: 3rem;
+  width: 18.75rem;
+  padding: 0.6875rem 2rem 0.6875rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+  /* Style */
+  border-radius: 0.25rem;
+  border: 1px solid var(--border-color-darker);
+  background: #FFFFFF;
+}
+
+.storybook-button-terciary:hover {
+  background: #EEEEEF;
+}
+
+.storybook-button-terciary:active {
+  background: #FFFFFF;
+  filter: opacity(35%);
+}
+
+.storybook-button-terciary-label {
+  flex: 1 0 0;
+  color: #21242C;
+  text-align: center;
+  font-family: var(--text-font-family);
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem; /* 133.333% */
+  letter-spacing: 0.00625rem;
+}
+
+.storybook-button-terciary--loading {
+  filter: opacity(35%);
+}
+
+.storybook-button-terciary--loading:hover {
+  background: #FFFFFF;
+}

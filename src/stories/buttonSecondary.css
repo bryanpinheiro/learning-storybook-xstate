@@ -1,0 +1,52 @@
+.storybook-button-secondary {
+  /* Layout */
+  display: inline-flex;
+  padding: 0rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  /* Style */
+  border-radius: 0.25rem;
+  border: 1px solid var(--secondary-color-lighter);
+  background: #FFFFFF;
+  /* Typography */
+  color: var(--primary-color);
+  text-align: center;
+  font-family: var(--text-font-family);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: 0.00625rem;
+}
+
+.storybook-button-secondary:hover {
+  border: 2px solid var(--primary-color);
+}
+
+.storybook-button-secondary:active {
+  color: var(--primary-color);
+  background: var(--primary-color-lighter);
+  border: 2px solid var(--primary-color-darker);
+}
+
+.storybook-button-secondary--medium {
+  height: 1.875rem;
+}
+
+.storybook-button-secondary--large {
+  width: 9.0625rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+.storybook-button-secondary--small {
+  width: 7.0625rem;
+  height: 1.5rem;
+  padding: 0rem 1rem;
+  border-radius: 0.125rem;
+  font-size: 0.75rem;
+}
+

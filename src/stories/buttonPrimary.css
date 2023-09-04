@@ -1,0 +1,67 @@
+.storybook-button-primary {
+  /* Layout */
+  display: flex;
+  width: auto;
+  padding: 0rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  /* Style */
+  border-radius: 0.25rem;
+  background: var(--primary-color);
+  border: none;
+  /* Typography */
+  font-family: var(--text-font-family);
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: 0.00625rem;
+}
+
+.storybook-button-primary:hover {
+  box-shadow: 0px 0px 0px 1px #FFF inset, 0px 0px 0px 2px var(--primary-color);
+}
+
+.storybook-button-primary:active {
+  background: var(--primary-color-darker);
+  color: var(--primary-color-lighter);
+  box-shadow: 0px 0px 0px 1px #FFF inset, 0px 0px 0px 2px var(--primary-color-darker);
+}
+
+.storybook-button-primary--medium {
+  height: 1.875rem;
+}
+
+.storybook-button-primary--large {
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+.storybook-button-primary--small {
+  height: 1.5rem;
+  padding: 0rem 1rem;
+  border-radius: 0.125rem;
+  font-size: 0.75rem;
+}
+
+.storybook-button-primary--off {
+  background: #B6B8BB;
+  color: #E4E6E6;
+}
+
+.storybook-button-primary--off:hover {
+  box-shadow: none;
+}
+
+.storybook-button-primary--off:active {
+  background: #B6B8BB;
+  color: #E4E6E6;
+  box-shadow: 0px 0px 0px 1px #FFF inset, 0px 0px 0px 2px #B6B8BB;
+}
+
+
