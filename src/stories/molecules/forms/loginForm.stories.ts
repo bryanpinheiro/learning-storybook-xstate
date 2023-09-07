@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ButtonTerciary } from './ButtonTerciary';
+import { LoginForm } from './loginForm';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Buttons/ButtonTerciary',
-  component: ButtonTerciary,
+  title: 'Molecules/Forms/LoginForm',
+  component: LoginForm,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -13,7 +13,7 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} satisfies Meta<typeof ButtonTerciary>;
+} satisfies Meta<typeof LoginForm>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -23,13 +23,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'Continue with Google',
   },
 };
 
-export const Loading: Story = {
+export const Negative_Field: Story = {
   args: {
-    label: 'Logging you in...',
-    loading: true,
+  },
+};
+
+export const Negative_Auth: Story = {
+  args: {
   },
 };

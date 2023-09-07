@@ -1,0 +1,28 @@
+.storybook-fieldlabel {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  /* Style */
+  color: var(--text-color);
+  /* Typography */
+  font-family: var(--text-font-family);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.storybook-fieldlabel--content-label-text {
+  gap: 0.5rem;
+}
+
+.storybook-fieldlabel .required {
+  color: var(--negative-color);
+  font-style: italic;
+}
+
+.storybook-fieldlabel .optional {
+  color: var(--text-color);
+  font-style: italic;
+}

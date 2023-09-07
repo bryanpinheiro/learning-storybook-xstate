@@ -1,0 +1,22 @@
+.storybook-link {
+  /* Typography */
+  color: var(--primary-color);
+  font-family: var(--text-font-family);
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4375rem; /* 153.333% */
+  letter-spacing: 0.00625rem;
+  text-decoration: none;
+}
+
+.storybook-link:hover {
+  /* Typography */
+  text-decoration-line: underline;
+}
+
+.storybook-link:active {
+  /* Typography */
+  color: var(--primary-color-darker);
+  text-decoration-line: underline;
+}

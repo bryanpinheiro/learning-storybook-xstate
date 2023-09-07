@@ -4,7 +4,7 @@ import { ButtonPrimary } from './ButtonPrimary';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Buttons/ButtonPrimary',
+  title: 'Atoms/Buttons/ButtonPrimary',
   component: ButtonPrimary,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
@@ -46,7 +46,7 @@ export const Disabled: Story = {
   args: {
     label: 'Log in',
     size: 'large',
-    disabled: true,
+    major: 'disabled',
   },
 };
 

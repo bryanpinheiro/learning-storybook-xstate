@@ -1,0 +1,17 @@
+.storybook-helptext {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  /* Typography */
+  color: var(--text-color);
+  font-family: var(--text-font-family);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem; /* 128.571% */
+}
+
+.storybook-helptext--negative {
+  color: var(--negative-color);
+}

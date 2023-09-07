@@ -49,16 +49,16 @@
   font-size: 0.75rem;
 }
 
-.storybook-button-primary--off {
+.storybook-button-primary--disabled {
   background: #B6B8BB;
   color: #E4E6E6;
 }
 
-.storybook-button-primary--off:hover {
+.storybook-button-primary--disabled:hover {
   box-shadow: none;
 }
 
-.storybook-button-primary--off:active {
+.storybook-button-primary--disabled:active {
   background: #B6B8BB;
   color: #E4E6E6;
   box-shadow: 0px 0px 0px 1px #FFF inset, 0px 0px 0px 2px #B6B8BB;

@@ -1,0 +1,48 @@
+.storybook-login {
+  /* Layout */
+  display: flex;
+  max-width: 100vw;
+  min-height: 100vh;
+  padding: 0.75rem 1.5rem 4rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Style */
+  background: #FFFFFF;
+  border: none;
+  margin: 0;
+}
+
+.storybook-login div {
+  border: 1px solid lightgray;
+  padding: .5em;
+}
+
+.storybook-login--form {
+  width: 28.125rem;
+  height: 41.375rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #E7E7E7;
+}
+
+.x-div::before,
+.x-div::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 300%;
+  height: 2px; /* Adjust the thickness of the lines as needed */
+  background-color: lightgray; /* Adjust the line color */
+}
+
+.x-div::before {
+  transform: rotate(56deg);
+  top: calc(50% - 1px); /* Adjust the vertical position of the top line */
+}
+
+.x-div::after {
+  transform: rotate(-56deg);
+  top: calc(50% - 1px); /* Adjust the vertical position of the bottom line */
+}

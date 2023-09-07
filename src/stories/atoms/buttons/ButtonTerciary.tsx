@@ -19,7 +19,7 @@ interface ButtonTerciaryProps {
 }
 
 /**
- * Terciary UI component for user interaction
+ * Terciary Button component for user interaction
  */
 export const ButtonTerciary = ({
   loading = false,

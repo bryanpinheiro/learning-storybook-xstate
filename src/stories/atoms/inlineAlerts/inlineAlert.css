@@ -1,0 +1,45 @@
+.storybook-inline-alert {
+  /* Layout */
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  /* Style */
+  border-radius: 0.25rem;
+  border: 2px solid #909090;
+  /* Typography */
+  color: var(--text-color);
+  font-family: var(--text-font-family);
+  font-size: 1rem;
+  line-height: 1.125rem; /* 128.571% */
+  letter-spacing: 0.00625rem;
+}
+
+.storybook-inline-alert header {
+  display: flex;
+  height: 1.125rem;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.storybook-inline-alert .title {
+  font-weight: 700;
+}
+
+.storybook-inline-alert .description {
+  color: #37383A;
+  font-weight: 400;
+  line-height: 1.3125rem; /* 150% */
+}
+
+.storybook-inline-alert--negative {
+  border-color: var(--negative-color);
+}
+
+.storybook-inline-alert--informative {
+  border-color: var(--primary-color);
+}

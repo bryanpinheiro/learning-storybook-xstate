@@ -1,0 +1,33 @@
+.storybook-textfield {
+  /* Layout */
+  display: flex;
+  width: 12.5rem;
+  height: 2.5rem;
+  padding: 0rem 0.125rem 0rem 1rem;
+  align-items: center;
+  flex-shrink: 0;
+  /* Style */
+  border-radius: 0.25rem;
+  border: 1px solid var(--border-color-lighter);
+  background: #FFFFFF;
+  /* Typography */
+  font-family: var(--text-font-family);
+  color: var(--text-color);
+  text-align: start;
+  font-size: 1rem;
+  outline: none;
+  /* Animation */
+  transition: border-color 0.15s ease-in-out;
+}
+
+.storybook-textfield:focus {
+  border-radius: 0.25rem;
+  border: 1px solid var(--primary-color);
+  background: #FFF;
+}
+
+.storybook-textfield:invalid {
+  border-radius: 0.25rem;
+  border: 1px solid var(--negative-color);
+  background: var(--negative-color-lighter);
+}

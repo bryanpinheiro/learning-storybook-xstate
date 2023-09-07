@@ -1,7 +1,7 @@
 import React from 'react';
-import './buttonPrimary.css';
+import './buttonSecondary.css';
 
-interface ButtonPrimaryProps {
+interface ButtonSecondaryProps {
   /**
    * Is the button disabled?
    */
@@ -21,22 +21,22 @@ interface ButtonPrimaryProps {
 }
 
 /**
- * Primary UI component for user interaction
+ * Secondary Button component for user interaction
  */
-export const ButtonPrimary = ({
+export const ButtonSecondary = ({
   disabled = false,
   size = 'medium',
   label,
   ...props
-}: ButtonPrimaryProps) => {
-  const mode = `storybook-button-primary--${disabled ? 'off' : 'on'}`;
+}: ButtonSecondaryProps) => {
+  const mode = `storybook-button-secondary--${disabled ? 'off' : 'on'}`;
   return (
     <button
       {...props}
       type="button"
       className={ [
-        'storybook-button-primary',
-        `storybook-button-primary--${ size }`,
+        'storybook-button-secondary',
+        `storybook-button-secondary--${ size }`,
         mode
       ].join(' ') }
     >
