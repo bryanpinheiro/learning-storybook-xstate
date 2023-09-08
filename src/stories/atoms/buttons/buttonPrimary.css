@@ -12,6 +12,7 @@
   border-radius: 0.25rem;
   background: var(--primary-color);
   border: none;
+  cursor: pointer;
   /* Typography */
   font-family: var(--text-font-family);
   color: #FFFFFF;
@@ -52,16 +53,24 @@
 .storybook-button-primary--disabled {
   background: #B6B8BB;
   color: #E4E6E6;
+  cursor: default;
 }
 
 .storybook-button-primary--disabled:hover {
   box-shadow: none;
 }
 
-.storybook-button-primary--disabled:active {
+.storybook-button-primary--disabled:focus {
   background: #B6B8BB;
   color: #E4E6E6;
   box-shadow: 0px 0px 0px 1px #FFF inset, 0px 0px 0px 2px #B6B8BB;
 }
 
+.storybook-button-primary--disabled:not(:focus) {
+  background: #B6B8BB;
+  color: #E4E6E6;
+}
 
+.storybook-button-primary.fullwidth {
+  width: 100%;
+}

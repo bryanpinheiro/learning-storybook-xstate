@@ -1,6 +1,7 @@
 .storybook-fieldlabel {
   /* Layout */
   display: inline-flex;
+  width: 100%;
   align-items: center;
   gap: 0.25rem;
   /* Style */

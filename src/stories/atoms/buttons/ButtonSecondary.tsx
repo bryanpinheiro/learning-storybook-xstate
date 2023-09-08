@@ -3,6 +3,18 @@ import './buttonSecondary.css';
 
 interface ButtonSecondaryProps {
   /**
+   * Button ID
+   */
+  id: string;
+  /**
+   * Button contents
+   */
+  label: string;
+  /**
+   * Button type
+   */
+  type: string;
+  /**
    * Is the button disabled?
    */
   disabled?: boolean;
@@ -10,10 +22,6 @@ interface ButtonSecondaryProps {
    * How large should the button be?
    */
   size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
   /**
    * Optional click handler
    */

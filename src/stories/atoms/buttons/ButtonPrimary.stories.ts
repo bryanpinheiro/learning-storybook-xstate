@@ -23,6 +23,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Medium: Story = {
   args: {
+    id: 'default',
+    type: 'button',
     label: 'Log in',
     size: 'medium',
   },
@@ -30,6 +32,8 @@ export const Medium: Story = {
 
 export const Large: Story = {
   args: {
+    id: 'default',
+    type: 'button',
     label: 'Log in',
     size: 'large',
   },
@@ -37,6 +41,8 @@ export const Large: Story = {
 
 export const Small: Story = {
   args: {
+    id: 'default',
+    type: 'button',
     label: 'Log in',
     size: 'small',
   },
@@ -44,6 +50,8 @@ export const Small: Story = {
 
 export const Disabled: Story = {
   args: {
+    id: 'default',
+    type: 'button',
     label: 'Log in',
     size: 'large',
     major: 'disabled',
@@ -52,6 +60,8 @@ export const Disabled: Story = {
 
 export const Loading: Story = {
   args: {
+    id: 'default',
+    type: 'button',
     label: 'Logging you in...',
     size: 'large',
   },

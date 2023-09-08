@@ -23,12 +23,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    id: 'default',
+    type: 'button',
     label: 'Continue with Google',
   },
 };
 
 export const Loading: Story = {
   args: {
+    id: 'default',
+    type: 'button',
     label: 'Logging you in...',
     loading: true,
   },

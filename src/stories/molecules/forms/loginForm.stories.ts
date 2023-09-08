@@ -25,13 +25,3 @@ export const Default: Story = {
   args: {
   },
 };
-
-export const Negative_Field: Story = {
-  args: {
-  },
-};
-
-export const Negative_Auth: Story = {
-  args: {
-  },
-};

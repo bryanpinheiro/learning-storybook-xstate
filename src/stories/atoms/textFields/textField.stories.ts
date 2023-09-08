@@ -25,6 +25,7 @@ export const Default: Story = {
   args: {
     id: 'username_or_email',
     name: 'username_or_email',
+    ariaLabel: 'Username or email',
     type: 'text',
     autoComplete: 'username email',
     required: false,
@@ -35,6 +36,7 @@ export const Negative: Story = {
   args: {
     id: 'username_or_email',
     name: 'username_or_email',
+    ariaLabel: 'Username or email',
     type: 'text',
     autoComplete: 'off',
     required: true,
@@ -45,6 +47,7 @@ export const Password: Story = {
   args: {
     id: 'password',
     name: 'password',
+    ariaLabel: 'Password',
     type: 'password',
     autoComplete: 'current-password',
     required: true,

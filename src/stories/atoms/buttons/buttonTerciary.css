@@ -2,7 +2,7 @@
   /* Layout */
   display: flex;
   height: 3rem;
-  width: 18.75rem;
+  width: auto;
   padding: 0.6875rem 2rem 0.6875rem 0.5rem;
   justify-content: center;
   align-items: center;
@@ -12,15 +12,11 @@
   border-radius: 0.25rem;
   border: 1px solid var(--border-color-darker);
   background: #FFFFFF;
+  cursor: pointer;
 }
 
 .storybook-button-terciary:hover {
   background: #EEEEEF;
-}
-
-.storybook-button-terciary:active {
-  background: #FFFFFF;
-  filter: opacity(35%);
 }
 
 .storybook-button-terciary-label {
@@ -41,4 +37,8 @@
 
 .storybook-button-terciary--loading:hover {
   background: #FFFFFF;
+}
+
+.storybook-button-terciary.fullwidth {
+  width: 100%;
 }

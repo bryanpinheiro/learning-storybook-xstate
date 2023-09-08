@@ -23,6 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    id: 'default',
     text: 'Forgot Password?',
     url: '/forgotpw',
   },
@@ -30,6 +31,7 @@ export const Default: Story = {
 
 export const Outside_App: Story = {
   args: {
+    id: 'default',
     text: 'Google',
     url: 'https://www.google.com/',
     outside: true,

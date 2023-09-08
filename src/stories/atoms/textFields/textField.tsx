@@ -15,6 +15,10 @@ interface TextFieldProps {
    */
   ariaDescribedby?: string;
   /**
+   * Provide the aria-label for the input.
+   */
+  ariaLabel: string;
+  /**
    * What is the input's type?
    */
   type?: 'text' | 'password';
@@ -40,14 +44,17 @@ export const TextField = ({
   required = false,
   autoComplete = 'off',
   type = 'text',
+  ariaLabel,
   ...props
 }: TextFieldProps) => {
   return (
     <input
       { ...props }
-      required={ required }
       type={type}
       autoComplete={ autoComplete }
+      aria-required={ required }
+      aria-label={ ariaLabel }
+      aria-invalid={ false }
       autoCorrect='off'
       autoCapitalize='off'
       spellCheck='false'

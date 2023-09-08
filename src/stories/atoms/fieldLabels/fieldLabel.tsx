@@ -75,8 +75,9 @@ export const FieldLabel = ({
   }
 
   return (
-    <label { ...props }
-    className={ [
+    <label
+      { ...props }
+      className={ [
       'storybook-fieldlabel',
       contentMode,
       ].join(' ') }>

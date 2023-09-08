@@ -1,7 +1,7 @@
 .storybook-textfield {
   /* Layout */
   display: flex;
-  width: 12.5rem;
+  width: 100%;
   height: 2.5rem;
   padding: 0rem 0.125rem 0rem 1rem;
   align-items: center;
@@ -26,7 +26,7 @@
   background: #FFF;
 }
 
-.storybook-textfield:invalid {
+.storybook-textfield.invalid {
   border-radius: 0.25rem;
   border: 1px solid var(--negative-color);
   background: var(--negative-color-lighter);

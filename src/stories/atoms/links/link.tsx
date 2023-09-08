@@ -4,6 +4,10 @@ import './link.css';
 
 interface LinkProps {
   /**
+   * Link ID
+   */
+  id: string;
+  /**
    * Text to display on the link
    */
   text: string;

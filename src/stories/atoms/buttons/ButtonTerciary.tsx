@@ -5,13 +5,25 @@ import './buttonTerciary.css';
 
 interface ButtonTerciaryProps {
   /**
-   * Is the action loading?
+   * Button ID
    */
-  loading?: boolean;
+  id: string;
   /**
    * Button contents
    */
   label: string;
+  /**
+   * Button type
+   */
+  type: string;
+  /**
+   * Is the action loading?
+   */
+  loading?: boolean;
+  /**
+   * Sets button to full width
+   */
+  fullwidth?: boolean;
   /**
    * Optional click handler
    */
@@ -23,6 +35,7 @@ interface ButtonTerciaryProps {
  */
 export const ButtonTerciary = ({
   loading = false,
+  fullwidth = true,
   label,
   ...props
 }: ButtonTerciaryProps) => {
@@ -33,6 +46,7 @@ export const ButtonTerciary = ({
       className={ [
         'storybook-button-terciary',
         loading && 'storybook-button-terciary--loading',
+        fullwidth && 'fullwidth',
       ].join(' ') }
     >
       <Image
