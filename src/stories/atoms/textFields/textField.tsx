@@ -34,7 +34,7 @@ interface TextFieldProps {
   /**
    * Optional change handler
    */
-  onChange?: () => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**

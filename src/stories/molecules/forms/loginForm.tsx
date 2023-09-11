@@ -8,12 +8,14 @@ import { HelpText } from '@/stories/atoms/helpTexts/helpText';
 import { InLineAlert } from '@/stories/atoms/inlineAlerts/inlineAlert';
 
 import './loginForm.css';
+import { useMachine } from '@xstate/react';
+import { loginFormMachine } from '@/machines/loginForm.machine';
 
 interface LoginFormProps {
   /**
    * OnSubmit handler
    */
-  onSubmit: () => void;
+  onSubmit: (data: any) => void;
 }
 
 /**
@@ -22,24 +24,26 @@ interface LoginFormProps {
 export const LoginForm = ({
   onSubmit,
 }: LoginFormProps) => {
+
+  const [state, send] = useMachine(loginFormMachine);
+
+  function onChangeUsername(event: React.ChangeEvent<HTMLInputElement>): void {
+    const value = event.currentTarget.value;
+    console.log("Username or email: " + value);
+  }
+
+  function onChangePassword(event: React.ChangeEvent<HTMLInputElement>): void {
+    const value = event.currentTarget.value;
+    console.log("Password: " + value);
+  }
   
   function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-
-    // You can access form elements and their values using event.currentTarget
     const form = event.currentTarget;
     const formData = new FormData(form);
-
-    // Do something with the form data (e.g., send it to a server, perform validation)
-    // Example: Display the form data in the console
-    for (const [name, value] of formData.entries()) {
-      console.log(`${name}: ${value}`);
-    }
-
-    // You can also perform other actions or state updates here
-
-    // Optionally, you can use the reset() method to clear the form fields
-    form.reset();
+    const data = Object.fromEntries(formData);
+    onSubmit(data);
+    console.log(state.value);
   }
 
   return (
@@ -70,15 +74,23 @@ export const LoginForm = ({
         autoComplete='username email'
         ariaDescribedby='username_email_help'
         required={ true }
+        onChange={ onChangeUsername }
       />
-      <HelpText
-        id='username_email_help'
-        variant='negative'
-        text={
-          'An email or username is required to log in.' + ' ' +
-          'You can also log in with Google.'
-        }
-      />
+      {
+        (
+          state.matches('Showing email help text') ||
+          state.matches('Showing email and password help texts')
+        ) && (
+          <HelpText
+            id='username_email_help'
+            variant='negative'
+            text={
+              'An email or username is required to log in.' + ' ' +
+              'You can also log in with Google.'
+            }
+          />
+        )  
+      }
       <FieldLabel
         htmlFor='password'
         label='Password'
@@ -93,16 +105,24 @@ export const LoginForm = ({
         autoComplete='current-password'
         ariaDescribedby='password_help'
         required={ true }
+        onChange={ onChangePassword }
       />
-      <HelpText
-        id='password_help'
-        variant='negative'
-        text='A password is required to log in.'
-      />
+      {
+        (
+          state.matches('Showing password help text') ||
+          state.matches('Showing email and password help texts')
+        ) && (
+          <HelpText
+            id='password_help'
+            variant='negative'
+            text='A password is required to log in.'
+          />
+        )  
+      }
       <ButtonPrimary
         id='login_button'
         type='submit'
-        major='disabled'
+        major={state.matches('Valid') ? 'neutral' : 'disabled'}
         size='large'
         label='Log in'
       />

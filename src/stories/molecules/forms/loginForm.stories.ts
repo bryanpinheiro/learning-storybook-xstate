@@ -23,5 +23,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    onSubmit: (data) => alert(JSON.stringify(data, null, 2)),
   },
 };
