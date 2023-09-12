@@ -28,13 +28,26 @@ export const LoginForm = ({
   const [state, send] = useMachine(loginFormMachine);
 
   function onChangeUsername(event: React.ChangeEvent<HTMLInputElement>): void {
-    const value = event.currentTarget.value;
-    console.log("Username or email: " + value);
+    console.log(event);
+
+    // let value = "";
+    // if (event.currentTarget) {
+    //   value = event.currentTarget.value;
+    // } else {
+    //   value = event.target.value;
+    // }
+
+    send({
+      type: "Email Input Changed",
+      value: event.currentTarget.value,
+    });
   }
 
   function onChangePassword(event: React.ChangeEvent<HTMLInputElement>): void {
-    const value = event.currentTarget.value;
-    console.log("Password: " + value);
+    send({
+      type: "Password Input Changed",
+      value: event.currentTarget.value,
+    });
   }
   
   function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
@@ -43,8 +56,38 @@ export const LoginForm = ({
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     onSubmit(data);
-    console.log(state.value);
   }
+
+  function onFocusUsername(event: React.ChangeEvent<HTMLInputElement>): void {
+    send({
+      type: "Email Input Focused",
+      value: event.currentTarget.value,
+    });
+  }
+
+  function onBlurUsername(event: React.ChangeEvent<HTMLInputElement>): void {
+    send({
+      type: "Unfocused Email Input",
+      value: event.currentTarget.value,
+    });
+  }
+
+  function onFocusPassword(event: React.ChangeEvent<HTMLInputElement>): void {
+    send({
+      type: "Password Input Focused",
+      value: event.currentTarget.value,
+    });
+  }
+
+  function onBlurPassword(event: React.ChangeEvent<HTMLInputElement>): void {
+    send({
+      type: "Unfocused Password Input",
+      value: event.currentTarget.value,
+    });
+  }
+
+  console.log(state.value);
+  console.log(state.context);
 
   return (
     <form onSubmit={handleSubmit} className='storybook-loginform' noValidate>
@@ -54,12 +97,12 @@ export const LoginForm = ({
         label='Continue with Google'
       />
       <HelpText content='icon_label' text='indicates a required field.' />
-      <InLineAlert
+      {/* <InLineAlert
         variant='negative'
         title='Unable to log in'
         description={ 'Your login or password is incorrect.' +
         ' Please double-check your credentials and try again.' }
-      />
+      /> */}
       <FieldLabel
         htmlFor='username_email'
         label='Email or username'
@@ -73,13 +116,15 @@ export const LoginForm = ({
         type='text'
         autoComplete='username email'
         ariaDescribedby='username_email_help'
-        required={ true }
         onChange={ onChangeUsername }
+        onFocus={ onFocusUsername }
+        onBlur={ onBlurUsername }
+        invalid={!state.context.isEmailValid}
+        required={true}
       />
       {
         (
-          state.matches('Showing email help text') ||
-          state.matches('Showing email and password help texts')
+          !state.context.isEmailValid
         ) && (
           <HelpText
             id='username_email_help'
@@ -104,13 +149,15 @@ export const LoginForm = ({
         type='password'
         autoComplete='current-password'
         ariaDescribedby='password_help'
-        required={ true }
         onChange={ onChangePassword }
+        onBlur={ onBlurPassword }
+        onFocus={ onFocusPassword }
+        invalid={!state.context.isPasswordValid}
+        required={true}
       />
       {
         (
-          state.matches('Showing password help text') ||
-          state.matches('Showing email and password help texts')
+          !state.context.isPasswordValid
         ) && (
           <HelpText
             id='password_help'
@@ -122,7 +169,7 @@ export const LoginForm = ({
       <ButtonPrimary
         id='login_button'
         type='submit'
-        major={state.matches('Valid') ? 'neutral' : 'disabled'}
+        major={ state.context.isSubmitEnabled ? "neutral" : "disabled" }
         size='large'
         label='Log in'
       />

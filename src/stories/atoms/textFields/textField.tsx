@@ -27,6 +27,10 @@ interface TextFieldProps {
    */
   required?: boolean;
   /**
+   * Is it invalid?
+   */
+  invalid?: boolean;
+  /**
    * Which autocomplete option?
    */
   autoComplete?: 'off' | 'username' | 'email' | 'username email' |
@@ -35,6 +39,14 @@ interface TextFieldProps {
    * Optional change handler
    */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Optional focus handler
+   */
+  onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Optional blur handler
+   */
+  onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
@@ -42,6 +54,7 @@ interface TextFieldProps {
  */
 export const TextField = ({
   required = false,
+  invalid = false,
   autoComplete = 'off',
   type = 'text',
   ariaLabel,
@@ -50,16 +63,17 @@ export const TextField = ({
   return (
     <input
       { ...props }
-      type={type}
+      type={ type }
       autoComplete={ autoComplete }
       aria-required={ required }
       aria-label={ ariaLabel }
-      aria-invalid={ false }
+      aria-invalid={ invalid }
       autoCorrect='off'
       autoCapitalize='off'
       spellCheck='false'
       className={ [
         'storybook-textfield',
+        invalid && 'invalid',
       ].join(' ') }
     />
   );
