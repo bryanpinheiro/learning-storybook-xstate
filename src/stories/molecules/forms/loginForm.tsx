@@ -16,12 +16,19 @@ interface LoginFormProps {
    * OnSubmit handler
    */
   onSubmit: (data: any) => void;
+  /**
+   * OnGoogleAuthClick handler
+   */
+  onGoogleAuthClick: () => void;
 }
 
 /**
  * Login form component for user interaction
  */
-export const LoginForm = ({ onSubmit }: LoginFormProps) => {
+export const LoginForm = ({
+  onSubmit,
+  onGoogleAuthClick,
+}: LoginFormProps) => {
   const [state, send] = useMachine(loginFormMachine);
 
   function onChangeUsername(event: React.ChangeEvent<HTMLInputElement>): void {
@@ -91,6 +98,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
         id="google_authentication_button"
         type="button"
         label="Continue with Google"
+        onClick={onGoogleAuthClick}
       />
       <HelpText content="icon_label" text="indicates a required field." />
       {/* <InLineAlert

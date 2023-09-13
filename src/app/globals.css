@@ -187,7 +187,7 @@ body {
   overflow-x: hidden;
 }
 
-body.centered-layout {
+body {
   display: flex;
   max-width: 100vw;
   min-height: 100vh;
