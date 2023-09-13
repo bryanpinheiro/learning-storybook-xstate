@@ -58,6 +58,7 @@ export const TextField = ({
   autoComplete = 'off',
   type = 'text',
   ariaLabel,
+  ariaDescribedby,
   ...props
 }: TextFieldProps) => {
   return (
@@ -68,6 +69,7 @@ export const TextField = ({
       aria-required={ required }
       aria-label={ ariaLabel }
       aria-invalid={ invalid }
+      aria-describedby={ ariaDescribedby }
       autoCorrect='off'
       autoCapitalize='off'
       spellCheck='false'
